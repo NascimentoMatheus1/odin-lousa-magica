@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    border: 0;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1{
+    margin: 50px;
+    text-transform: uppercase;
+    color: blueviolet;
+}
+
+#contanier{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 1300px;
+}
+
+#lousa{
+    width: 900px;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+
+#menu{
+    background-color: aqua;
+}
+
+.squares{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-black{
+    background-color: black;
+}

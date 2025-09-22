@@ -31,22 +31,20 @@ h1{
 #lousa{
     width: 900px;
     height: 900px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border: 1px solid black;
+    border: 5px solid black;
 }
 
 #menu{
-    background-color: aqua;
+    max-width: 100%;
 }
 
-.squares{
+.quadrado{
+    box-sizing: border-box;
+    display: inline;
+    float: left;
     background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* border: 1px solid gray; */
+    font-size: 10px;
 }
 
 .background-black{

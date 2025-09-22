@@ -42,6 +42,10 @@ h1{
     gap: 20px;
 }
 
+#lousa-tamanho{
+    text-align: center;
+}
+
 .menu-btn{
     background-color: white;
     border-radius: 10px;

@@ -12,15 +12,26 @@
 
     <div id="contanier">
         <div id="menu">
-            <div id="lousa-tamanho">
-                <label for="grid-btn">Tamanho da lousa: </label>
+            <div id="pincel-cor">
+                <label for="pincel-color-input">Pincel: </label>
+                <input type="color" name="pincel-color-input" id="pincel-color-input">
+            </div>
 
-                <input type="number" name="grid-btn" id="grid-btn">
+             <div id="lousa-background">
+                <label for="lousa-color-input">Lousa: </label>
+                <input type="color" name="lousa-color-input" id="lousa-color-input">
+            </div>
+
+            <div id="lousa-tamanho">
+                <input type="range" name="grid-range" id="grid-range" min="1" max="64" value="32">
+                <p id="range-output">32x32</p>
             </div>
 
             <button id="borracha-btn" class="menu-btn">Borracha</button>
 
             <button id="limpar-btn" class="menu-btn">Limpar lousa</button>
+
+            
         </div>
 
         <div id="lousa">

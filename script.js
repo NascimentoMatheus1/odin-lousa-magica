@@ -1,10 +1,11 @@
 const lousa = document.getElementById('lousa');
 const limparButton = document.getElementById('limpar-btn');
 const borrachaButton = document.getElementById('borracha-btn');
-
+const RangeInput = document.getElementById('grid-range');
+const RangeOutput = document.getElementById('range-output');
 let corDoPincel = 'background-black';
-
 let clickAndHold = false;
+
 lousa.addEventListener('mouseleave', (e) => {
         e.preventDefault()
         clickAndHold = false; 
@@ -21,14 +22,13 @@ lousa.addEventListener('mouseup', (e) => {
 
 limparButton.addEventListener('click', (e) => {
     e.preventDefault()
-    lousa.innerHTML = '';
-    criarLousar(64);
+    criarLousar(32);
 });
 
 borrachaButton.addEventListener('click', (e) => {
     e.preventDefault();
     borrachaButton.classList.toggle('btn-ativado');
-    
+
     if(borrachaButton.classList.contains('btn-ativado')){
         corDoPincel = 'background-white';
         document.body.style.cursor = "crosshair";
@@ -38,7 +38,16 @@ borrachaButton.addEventListener('click', (e) => {
     }
 });
 
+RangeInput.addEventListener('input', (e) => {
+    e.preventDefault();
+    const rangeValue = Number(e.target.value);
+    RangeOutput.textContent = `${rangeValue} x ${rangeValue}`;
+
+    criarLousar(rangeValue);
+});
+
 const criarLousar = (grid) => {
+    lousa.innerHTML = '';
     const lousa_Height_Width = `${(400 / grid)}px`;
 
     for(let l = 1; l <= grid; l++){
@@ -60,4 +69,4 @@ const criarLousar = (grid) => {
     }
 }
 
-criarLousar(64);
+criarLousar(32);

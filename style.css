@@ -87,11 +87,3 @@ input{
 .add-border{
     border: 1px solid rgba(128, 128, 128, 0.195);
 }
-
-.background-black{
-    background-color: black;
-}
-
-.background-white{
-    background-color: white;
-}

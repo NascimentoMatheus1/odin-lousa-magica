@@ -4,7 +4,7 @@ const RangeOutput = document.getElementById('range-output');
 const quadriculadoButton = document.getElementById('quadriculado-btn');
 const borrachaButton = document.getElementById('borracha-btn');
 const limparButton = document.getElementById('limpar-btn');
-let corDoPincel = 'background-black';
+let corDoPincel = 'black';
 let clickAndHold = false;
 
 lousa.addEventListener('mouseleave', (e) => {
@@ -15,11 +15,9 @@ lousa.addEventListener('mousedown', (e) => {
         e.preventDefault()
         clickAndHold = true; 
         if(borrachaButton.classList.contains('btn-ativado')){
-            e.target.classList.add('background-white')
-            e.target.classList.remove('background-black')
+            e.target.style.backgroundColor = "white";
         }else{
-            e.target.classList.add('background-black')
-            e.target.classList.remove('background-white')
+            e.target.style.backgroundColor = "black";
         }      
 });
 lousa.addEventListener('mouseup', (e) => {
@@ -38,11 +36,11 @@ borrachaButton.addEventListener('click', (e) => {
     borrachaButton.classList.toggle('btn-ativado');
 
     if(borrachaButton.classList.contains('btn-ativado')){
-        corDoPincel = 'background-white';
+        corDoPincel = 'white';
         document.body.style.cursor = "crosshair";
         lousa.style.cursor = "crosshair";
     }else{
-        corDoPincel = 'background-black';
+        corDoPincel = 'black';
         document.body.style.cursor = "auto";
         lousa.style.cursor = "pointer";
     }
@@ -57,7 +55,6 @@ RangeInput.addEventListener('input', (e) => {
     e.preventDefault();
     const rangeValue = Number(e.target.value);
     RangeOutput.textContent = `${rangeValue} x ${rangeValue}`;
-
     criarLousar(rangeValue);
 });
 
@@ -74,15 +71,15 @@ const criarLousar = (grid) => {
     for(let l = 1; l <= grid; l++){
         for(let c = 1; c <= grid; c++){
             const div = document.createElement('div');
-
-            div.addEventListener('mouseout', (e) => {
-                e.preventDefault();
-                if(clickAndHold){
-                    e.target.classList.remove('background-white')
-                    e.target.classList.remove('background-black')
-                    e.target.classList.add(corDoPincel);
-                }
-            })
+            
+            ["mouseout", "mouseover"].forEach((tipo) => {
+                div.addEventListener(tipo, (e) => {
+                    e.preventDefault();
+                    if(clickAndHold){
+                        e.target.style.backgroundColor = corDoPincel;
+                    }
+                });
+            });
             
             div.style.width = lousa_Height_Width;
             div.style.height = lousa_Height_Width;

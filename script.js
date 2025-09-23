@@ -16,8 +16,10 @@ lousa.addEventListener('mousedown', (e) => {
         clickAndHold = true; 
         if(borrachaButton.classList.contains('btn-ativado')){
             e.target.classList.add('background-white')
+            e.target.classList.remove('background-black')
         }else{
             e.target.classList.add('background-black')
+            e.target.classList.remove('background-white')
         }      
 });
 lousa.addEventListener('mouseup', (e) => {
@@ -48,7 +50,7 @@ borrachaButton.addEventListener('click', (e) => {
 
 limparButton.addEventListener('click', (e) => {
     e.preventDefault()
-    criarLousar(32);
+    criarLousar(RangeInput.value);
 });
 
 RangeInput.addEventListener('input', (e) => {
@@ -76,6 +78,8 @@ const criarLousar = (grid) => {
             div.addEventListener('mouseout', (e) => {
                 e.preventDefault();
                 if(clickAndHold){
+                    e.target.classList.remove('background-white')
+                    e.target.classList.remove('background-black')
                     e.target.classList.add(corDoPincel);
                 }
             })

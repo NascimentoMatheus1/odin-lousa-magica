@@ -1,8 +1,9 @@
 const lousa = document.getElementById('lousa');
-const limparButton = document.getElementById('limpar-btn');
-const borrachaButton = document.getElementById('borracha-btn');
 const RangeInput = document.getElementById('grid-range');
 const RangeOutput = document.getElementById('range-output');
+const quadriculadoButton = document.getElementById('quadriculado-btn');
+const borrachaButton = document.getElementById('borracha-btn');
+const limparButton = document.getElementById('limpar-btn');
 let corDoPincel = 'background-black';
 let clickAndHold = false;
 
@@ -13,16 +14,21 @@ lousa.addEventListener('mouseleave', (e) => {
 lousa.addEventListener('mousedown', (e) => {
         e.preventDefault()
         clickAndHold = true; 
-        e.target.classList.add('background-black')
+        if(borrachaButton.classList.contains('btn-ativado')){
+            e.target.classList.add('background-white')
+        }else{
+            e.target.classList.add('background-black')
+        }      
 });
 lousa.addEventListener('mouseup', (e) => {
         e.preventDefault()
         clickAndHold = false; 
 });
 
-limparButton.addEventListener('click', (e) => {
-    e.preventDefault()
-    criarLousar(32);
+quadriculadoButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    quadriculadoButton.classList.toggle('btn-ativado');
+    adicionarQuadriculado();
 });
 
 borrachaButton.addEventListener('click', (e) => {
@@ -32,10 +38,17 @@ borrachaButton.addEventListener('click', (e) => {
     if(borrachaButton.classList.contains('btn-ativado')){
         corDoPincel = 'background-white';
         document.body.style.cursor = "crosshair";
+        lousa.style.cursor = "crosshair";
     }else{
         corDoPincel = 'background-black';
         document.body.style.cursor = "auto";
+        lousa.style.cursor = "pointer";
     }
+});
+
+limparButton.addEventListener('click', (e) => {
+    e.preventDefault()
+    criarLousar(32);
 });
 
 RangeInput.addEventListener('input', (e) => {
@@ -45,6 +58,12 @@ RangeInput.addEventListener('input', (e) => {
 
     criarLousar(rangeValue);
 });
+
+const adicionarQuadriculado = () => {
+    Array.from(lousa.children, (elem) => {
+        elem.classList.toggle('add-border');
+    })
+}
 
 const criarLousar = (grid) => {
     lousa.innerHTML = '';
@@ -64,6 +83,9 @@ const criarLousar = (grid) => {
             div.style.width = lousa_Height_Width;
             div.style.height = lousa_Height_Width;
             div.classList.add('quadrado');
+            if(quadriculadoButton.classList.contains('btn-ativado')){
+               div.classList.add('add-border'); 
+            }
             lousa.appendChild(div);
         }
     }

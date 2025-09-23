@@ -29,10 +29,15 @@ h1{
     width: 1300px;
 }
 
+input{
+    cursor: pointer;
+}
+
 #lousa{
     width: 400px;
     height: 400px;
     border: 20px solid rgb(58, 56, 56);
+    cursor: pointer;
 }
 
 #menu{
@@ -40,10 +45,15 @@ h1{
     flex-direction: column;
     justify-content: center;
     gap: 20px;
+    align-self: center;
 }
 
 #lousa-tamanho{
     text-align: center;
+}
+
+#grid-range{
+    accent-color: black;
 }
 
 .menu-btn{
@@ -71,6 +81,11 @@ h1{
     display: inline;
     float: left;
     background-color: white;
+    
+}
+
+.add-border{
+    border: 1px solid rgba(128, 128, 128, 0.195);
 }
 
 .background-black{

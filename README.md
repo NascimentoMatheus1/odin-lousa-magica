@@ -20,4 +20,4 @@
 
 ### - Clicar e segurar no mouse para interagir com a lousa
 
-## ## Tarefa do The Odin Project: [Project: Etch-a-Sketch](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)
+## Tarefa do The Odin Project: [Project: Etch-a-Sketch](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)

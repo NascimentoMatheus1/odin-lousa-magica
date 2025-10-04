@@ -2,7 +2,7 @@
 
 ## [Visualização (Live Preview)](https://nascimentomatheus1.github.io/odin-lousa-magica/)
 
-## O que o usuario pode fazer:
+## O que o usuário pode fazer:
 
 ### - Escrever e desenhar na tela.
 

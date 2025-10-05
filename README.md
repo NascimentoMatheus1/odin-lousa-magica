@@ -20,4 +20,16 @@
 
 ### - Clicar e segurar no mouse para interagir com a lousa
 
+## Conhecimentos adquiridos:
+
+### - Manipulação da DOM
+
+### - Programação Orientada a Eventos 
+
+### - Gerenciamento de Estado da Aplicação
+
+### - Eventos do DOM.
+
+### - Layout e Posicionamento
+
 ## Tarefa do The Odin Project: [Project: Etch-a-Sketch](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)
